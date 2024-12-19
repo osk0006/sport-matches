@@ -1,6 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
 import * as SportActions from './sport.action';
-import { Match } from '../models/match.model';
 import { Sport } from '../models/sport.model';
 
 export const mactFeatureKey = 'match';

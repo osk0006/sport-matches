@@ -9,23 +9,24 @@ import { Sport } from '../models/sport.model';
 @Injectable()
 export class SportEffects {
 
-    constructor(private actions$: Actions, private sportService: SportService) { 
-    }
+  constructor(private actions$: Actions, private sportService: SportService) {
+  }
 
-    loadMatches$ = createEffect(() =>
-        this.actions$.pipe(
-          ofType(SportActions.loadSports),
-          mergeMap(() =>
-            this.sportService.getSportsData().pipe(
-              map((sportsData) => {
-                let sports: Sport [] = this.sportService.parseSports(sportsData);
-                return SportActions.loadSportsSuccess({ sports });}),
-              catchError((error) =>
-                of(SportActions.loadSportsFailure({ error: error.message }))
-              )
-            )
+  loadMatches$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(SportActions.loadSports),
+      mergeMap(() =>
+        this.sportService.getSportsData().pipe(
+          map((sportsData) => {
+            let sports: Sport[] = this.sportService.parseSports(sportsData);
+            return SportActions.loadSportsSuccess({ sports });
+          }),
+          catchError((error) =>
+            of(SportActions.loadSportsFailure({ error: error.message }))
           )
         )
-      );
+      )
+    )
+  );
 
 }

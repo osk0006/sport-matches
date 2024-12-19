@@ -2,7 +2,6 @@ import { Action, ActionReducer } from "@ngrx/store";
 import { sportReducer, SportState } from "./sport.reducer";
 import { SportEffects } from "./sport.effects";
 
-
 export interface AppState {
   sport: SportState
 }

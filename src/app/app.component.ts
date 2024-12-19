@@ -9,9 +9,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import * as SportActions from './store/sport.action';
 import { AppState } from './store/store';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { Sport } from './models/sport.model';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { sportSelector } from './store/sport.selectors';
 
 @Component({
   selector: 'app-root',

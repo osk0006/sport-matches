@@ -1,6 +1,5 @@
 import { Match } from "./match.model";
 
-
 export interface League {
     ID: number;
     Name: string;

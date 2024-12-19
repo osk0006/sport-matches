@@ -26,7 +26,6 @@ export class SportsMenuComponent {
 
   constructor(private store: Store<AppState>) {
     this.sports$ = toSignal(this.store.select(sportSelector));
-
   }
 
 }

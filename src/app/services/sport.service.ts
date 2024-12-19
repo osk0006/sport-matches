@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, signal } from '@angular/core';
-import { delay, Observable, of } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable} from 'rxjs';
 import { Sport } from '../models/sport.model';
 import { League } from '../models/league.model';
 import { Match } from '../models/match.model';
@@ -17,7 +17,6 @@ export class SportService {
       '#0000FF', '#000080', '#00FFFF', '#FF00FF'];
 
   constructor(private http: HttpClient) {
-
   }
 
   getSportsData(): Observable<any> {

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, signal, ViewChild } from '@angular/core';
 import { Sport } from '../../models/sport.model';
-import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
+import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonModule } from '@angular/material/button';
 import { MatchesTableComponent } from "../matches-table/matches-table.component";
 import { SportService } from '../../services/sport.service';
@@ -18,11 +18,11 @@ export class LeaguesComponent {
   @Input() sport: Sport | undefined;
   maxOdds$ = signal<number>(-1);
 
-  constructor(private sportService: SportService) {}
+  constructor(private sportService: SportService) { }
 
-  highestOdd(){
-    let maxOdds = this.sportService.getMaxOdds(this.maxOdds$(),this.sport);
-     this.maxOdds$.set(maxOdds);
+  highestOdd() {
+    let maxOdds = this.sportService.getMaxOdds(this.maxOdds$(), this.sport);
+    this.maxOdds$.set(maxOdds);
   }
 
 }
