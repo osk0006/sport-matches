@@ -1,0 +1,25 @@
+<div class="flex justify-between items-center mb-3">
+  <h1 class=" text-3xl font-bold">{{sport?.Name}}</h1>
+  <span class="ml-auto space-x-2">
+      <button class="mr-1 w-48" mat-raised-button color="accent" (click)="highestOdd()">Highest Odd{{ maxOdds$() > 0 ? ': ' + maxOdds$() : '' }}</button>
+      <button class="mr-1" mat-raised-button color="primary" (click)="accordion.openAll()">Expand
+          All</button>
+      <button class="mr-1" mat-raised-button color="primary" (click)="accordion.closeAll()">Collapse
+          All</button>
+  </span>
+
+</div>
+<mat-accordion [multi]="true">
+  @for (league of sport?.Leagues; track league.ID) {
+  <mat-expansion-panel [disabled]="false">
+      <mat-expansion-panel-header>
+          <mat-panel-title>
+              {{league.Name}}
+          </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-matches-table [league]="league" [sport]="sport" [maxOdds$]="maxOdds$"></app-matches-table>
+
+  </mat-expansion-panel>
+  }
+
+</mat-accordion>

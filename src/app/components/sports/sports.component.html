@@ -1,0 +1,17 @@
+<div class="w-full h-[calc(100vh-4rem)] overflow-auto  p-4">
+    <ng-container *ngIf="sports$() as sports;">
+
+        <div *ngIf="sports.length; else empty">
+            @for (sport of sports; track sport.ID) {
+            @if (sport.ID == sportID || sportID == 0) {
+            <app-leagues [sport]="sport"></app-leagues>
+            }
+            }
+        </div>
+
+        <ng-template #empty>
+            <h1>No sports.</h1>
+        </ng-template>
+
+    </ng-container>
+</div>

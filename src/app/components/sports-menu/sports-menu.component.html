@@ -1,0 +1,13 @@
+<section class="sidenav">
+  <div class="pt-16">
+    <ng-container *ngIf="sports$() as sports;">
+      <div *ngIf="sports.length">
+        <mat-list class="nav" *ngFor="let sport of sports$()">
+          <a mat-list-item routerLink="/sports/{{sport.ID}}">
+            <p matLine>{{ sport.Name }}</p>
+          </a>
+        </mat-list>
+      </div>
+    </ng-container>
+  </div>
+</section>
